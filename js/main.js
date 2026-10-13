@@ -1,12 +1,12 @@
-/*
-  Gnailed — Interactive Features  (2026 Edition)
-  Vanilla JavaScript — Mobile-first, accessible, performant
+﻿/*
+  Gnailed â€” Interactive Features  (2026 Edition)
+  Vanilla JavaScript â€” Mobile-first, accessible, performant
 */
 
 'use strict';
 
 // ============================================================
-// 🔹 1. RESPONSIVE NAVBAR TOGGLE
+// ðŸ”¹ 1. RESPONSIVE NAVBAR TOGGLE
 // ============================================================
 const menuBtn  = document.getElementById('menu-btn');
 const navLinks = document.getElementById('nav-links');
@@ -48,7 +48,7 @@ if (menuBtn && navLinks) {
 
 
 // ============================================================
-// 🔹 2. IMAGE CAROUSEL
+// ðŸ”¹ 2. IMAGE CAROUSEL
 // ============================================================
 const carouselSlides     = document.querySelectorAll('.carousel-slide');
 const carouselPrevBtn    = document.querySelector('.carousel-btn.prev');
@@ -105,28 +105,25 @@ if (carouselSlides.length > 0) {
 
 
 // ============================================================
-// 🔹 3. LIGHT / DARK MODE TOGGLE
+// ðŸ”¹ 3. LIGHT / DARK MODE TOGGLE (Solar SVGs via CSS)
 // ============================================================
 const themeToggle = document.getElementById('theme-toggle');
-const themeIcon   = document.querySelector('.theme-icon');
 
 if (themeToggle) {
   const saved = localStorage.getItem('gnailed-theme') || 'light';
   if (saved === 'dark') {
     document.body.classList.add('dark-mode');
-    if (themeIcon) themeIcon.textContent = '☀️';
   }
 
   themeToggle.addEventListener('click', () => {
     const isDark = document.body.classList.toggle('dark-mode');
-    if (themeIcon) themeIcon.textContent = isDark ? '☀️' : '🌙';
     localStorage.setItem('gnailed-theme', isDark ? 'dark' : 'light');
   });
 }
 
 
 // ============================================================
-// 🔹 4. SCROLL-TO-TOP BUTTON
+// ðŸ”¹ 4. SCROLL-TO-TOP BUTTON
 // ============================================================
 const scrollTopBtn = document.getElementById('scroll-top');
 
@@ -143,7 +140,7 @@ if (scrollTopBtn) {
 
 
 // ============================================================
-// 🔹 5. HEADER SCROLL EFFECT
+// ðŸ”¹ 5. HEADER SCROLL EFFECT
 // ============================================================
 const siteHeader = document.querySelector('.site-header');
 if (siteHeader) {
@@ -154,7 +151,7 @@ if (siteHeader) {
 
 
 // ============================================================
-// 🔹 6. SCROLL-REVEAL (IntersectionObserver)
+// ðŸ”¹ 6. SCROLL-REVEAL (IntersectionObserver)
 // ============================================================
 if ('IntersectionObserver' in window) {
   const revealObserver = new IntersectionObserver((entries) => {
@@ -171,7 +168,7 @@ if ('IntersectionObserver' in window) {
 
 
 // ============================================================
-// 🔹 7. HERO PARALLAX (scroll-driven, requestAnimationFrame)
+// ðŸ”¹ 7. HERO PARALLAX (scroll-driven, requestAnimationFrame)
 // ============================================================
 const heroMedia = document.querySelector('.hero-media');
 if (heroMedia) {
@@ -180,7 +177,7 @@ if (heroMedia) {
     if (rafId) cancelAnimationFrame(rafId);
     rafId = requestAnimationFrame(() => {
       const scrollY = window.scrollY;
-      // Subtle parallax — moves at 30% of scroll speed
+      // Subtle parallax â€” moves at 30% of scroll speed
       heroMedia.style.transform = `translateY(${scrollY * 0.30}px)`;
     });
   };
@@ -189,7 +186,7 @@ if (heroMedia) {
 
 
 // ============================================================
-// 🔹 8. SMOOTH SCROLL FOR ANCHOR LINKS
+// ðŸ”¹ 8. SMOOTH SCROLL FOR ANCHOR LINKS
 // ============================================================
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
@@ -208,7 +205,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 
 // ============================================================
-// 🔹 9. TABBED CONTENT (About page)
+// ðŸ”¹ 9. TABBED CONTENT (About page)
 // ============================================================
 const tabButtons  = document.querySelectorAll('.tab-btn');
 const tabContents = document.querySelectorAll('.tab-content');
@@ -227,7 +224,7 @@ if (tabButtons.length > 0) {
 
 
 // ============================================================
-// 🔹 10. CONTACT FORM VALIDATION
+// ðŸ”¹ 10. CONTACT FORM VALIDATION
 // ============================================================
 const contactForm = document.getElementById('contact-form');
 
@@ -291,14 +288,14 @@ if (contactForm) {
 
 
 // ============================================================
-// 🔹 11. DYNAMIC YEAR IN FOOTER
+// ðŸ”¹ 11. DYNAMIC YEAR IN FOOTER
 // ============================================================
 const yearEl = document.getElementById('year');
 if (yearEl) yearEl.textContent = new Date().getFullYear();
 
 
 // ============================================================
-// 🔹 12. LAZY LOADING IMAGES (data-src pattern)
+// ðŸ”¹ 12. LAZY LOADING IMAGES (data-src pattern)
 // ============================================================
 if ('IntersectionObserver' in window) {
   const imgObserver = new IntersectionObserver((entries, observer) => {
@@ -320,5 +317,6 @@ if ('IntersectionObserver' in window) {
 // ============================================================
 // Dev console badge
 // ============================================================
-console.log('%c🖤 Gnailed — Luxury Pre-Loved Fashion', 'font-size:15px;font-weight:700;color:#e8000d;');
-console.log('%cBuilt with ❤️  Vanilla JS — 2026 Edition', 'font-size:11px;color:#888;');
+console.log('%cGnailed â€” Luxury Pre-Loved Fashion', 'font-size:15px;font-weight:700;color:#e8000d;');
+console.log('%cVanilla JS â€” 2026 Edition', 'font-size:11px;color:#888;');
+
