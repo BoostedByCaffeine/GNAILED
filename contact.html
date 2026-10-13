@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Get in touch with Gnailed — we're here to help with all your luxury fashion needs.">
+  <title>Contact — Gnailed</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;700&family=UnifrakturCook:wght@700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%23000'/%3E%3Ctext x='32' y='42' text-anchor='middle' font-family='UnifrakturCook, Playfair Display, Georgia, serif' font-size='38' fill='%23fff' font-weight='700'%3EG%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner px-3 px-sm-4">
+      <a class="brand" href="index.html" aria-label="Gnailed home">
+        <span class="brand-mark" aria-hidden="true">G</span>
+        <span class="brand-lockup">
+          <span class="brand-wordmark">Gnailed</span>
+          <span class="brand-tagline" aria-hidden="true">GNAILED IT!</span>
+        </span>
+      </a>
+      <!-- Mobile menu toggle button -->
+      <button id="menu-btn" class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span class="hamburger"></span>
+      </button>
+      
+      <nav id="nav-links" class="primary-nav" aria-label="Primary">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+      </nav>
+      
+      <!-- Dark mode toggle button -->
+      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+        <span class="theme-icon">🌙</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <!-- Page Hero -->
+    <section class="page-hero">
+      <div class="container px-3 px-sm-4">
+        <h1>Get in Touch</h1>
+        <p class="hero-subtitle">We're here to help. Reach out with any questions or inquiries.</p>
+      </div>
+    </section>
+
+    <!-- Contact Form & Info Section -->
+    <section class="section">
+      <div class="container px-3 px-sm-4">
+        <div class="contact-layout">
+          <!-- Contact Form -->
+          <div class="contact-form-wrapper">
+            <h2>Send Us a Message</h2>
+            <p class="form-intro">Have a question about authentication, selling, or buying? Fill out the form below and we'll get back to you within 24 hours.</p>
+            
+            <form id="contact-form" class="contact-form" novalidate>
+              <div class="form-group">
+                <label for="name">Full Name <span class="required">*</span></label>
+                <input type="text" id="name" name="name" required placeholder="John Doe">
+                <span class="error-message" id="name-error"></span>
+              </div>
+              
+              <div class="form-group">
+                <label for="email">Email Address <span class="required">*</span></label>
+                <input type="email" id="email" name="email" required placeholder="john@example.com">
+                <span class="error-message" id="email-error"></span>
+              </div>
+              
+              <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" placeholder="+63 912 345 6789">
+              </div>
+              
+              <div class="form-group">
+                <label for="subject">Subject <span class="required">*</span></label>
+                <select id="subject" name="subject" required>
+                  <option value="">Select a subject</option>
+                  <option value="buying">Buying Inquiry</option>
+                  <option value="selling">Selling Inquiry</option>
+                  <option value="authentication">Authentication Question</option>
+                  <option value="support">Customer Support</option>
+                  <option value="partnership">Partnership Opportunity</option>
+                  <option value="other">Other</option>
+                </select>
+                <span class="error-message" id="subject-error"></span>
+              </div>
+              
+              <div class="form-group">
+                <label for="message">Message <span class="required">*</span></label>
+                <textarea id="message" name="message" rows="6" required placeholder="Tell us how we can help you..."></textarea>
+                <span class="error-message" id="message-error"></span>
+              </div>
+              
+              <div class="form-group checkbox-group">
+                <label class="checkbox-label">
+                  <input type="checkbox" id="newsletter" name="newsletter">
+                  <span>Subscribe to our newsletter for exclusive drops and updates</span>
+                </label>
+              </div>
+              
+              <button type="submit" class="button button-primary submit-btn">
+                <span class="btn-text">Send Message</span>
+                <span class="btn-loading" style="display: none;">Sending...</span>
+              </button>
+              
+              <div id="form-success" class="success-message" style="display: none;">
+                ✓ Thank you! Your message has been sent successfully. We'll get back to you soon.
+              </div>
+            </form>
+          </div>
+          
+          <!-- Contact Information -->
+          <div class="contact-info-wrapper">
+            <h2>Contact Information</h2>
+            <p>Prefer to reach out directly? Here's how you can contact us.</p>
+            
+            <div class="contact-methods">
+              <div class="contact-method">
+                <div class="method-icon">📧</div>
+                <div class="method-details">
+                  <h3>Email</h3>
+                  <a href="mailto:gnailedit@gmail.com">gnailedit@gmail.com</a>
+                  <p class="method-note">We respond within 24 hours</p>
+                </div>
+              </div>
+              
+              <div class="contact-method">
+                <div class="method-icon">📱</div>
+                <div class="method-details">
+                  <h3>Phone</h3>
+                  <a href="tel:+639923477440">(+63) 992 347 7440</a>
+                  <p class="method-note">Mon-Fri, 9AM-6PM PHT</p>
+                </div>
+              </div>
+              
+              <div class="contact-method">
+                <div class="method-icon">📍</div>
+                <div class="method-details">
+                  <h3>Location</h3>
+                  <p>Manila, Philippines</p>
+                  <p class="method-note">By appointment only</p>
+                </div>
+              </div>
+              
+              <div class="contact-method">
+                <div class="method-icon">💬</div>
+                <div class="method-details">
+                  <h3>Social Media</h3>
+                  <a href="https://instagram.com/gnailedit" target="_blank" rel="noopener">@gnailedit on Instagram</a>
+                  <p class="method-note">DM us for quick questions</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="business-hours">
+              <h3>Business Hours</h3>
+              <ul>
+                <li><strong>Monday - Friday:</strong> 9:00 AM - 6:00 PM</li>
+                <li><strong>Saturday:</strong> 10:00 AM - 4:00 PM</li>
+                <li><strong>Sunday:</strong> Closed</li>
+              </ul>
+              <p class="hours-note">All times are in Philippine Time (PHT)</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section faq-section" style="background: var(--surface);">
+      <div class="container px-3 px-sm-4">
+        <header class="section-header">
+          <h2>Frequently Asked Questions</h2>
+          <p>Quick answers to common questions</p>
+        </header>
+        
+        <div class="faq-grid">
+          <div class="faq-item">
+            <h3>How do I know items are authentic?</h3>
+            <p>Every item undergoes rigorous multi-point authentication by our expert team. We provide a certificate of authenticity with each purchase and offer a money-back guarantee if authenticity is ever questioned.</p>
+          </div>
+          
+          <div class="faq-item">
+            <h3>What is your return policy?</h3>
+            <p>We offer a 7-day return policy for items that don't match their description. Items must be returned in the same condition as received. Buyer pays return shipping unless the item was misrepresented.</p>
+          </div>
+          
+          <div class="faq-item">
+            <h3>How long does shipping take?</h3>
+            <p>Orders ship within 24-48 hours. Domestic shipping typically takes 3-5 business days. International shipping varies by destination but usually arrives within 7-14 business days.</p>
+          </div>
+          
+          <div class="faq-item">
+            <h3>Can I sell my items to Gnailed?</h3>
+            <p>Absolutely! We accept luxury items in good condition. Submit photos and details through our contact form, and our team will review and provide a quote within 48 hours.</p>
+          </div>
+          
+          <div class="faq-item">
+            <h3>Do you offer authentication services?</h3>
+            <p>Yes! We offer standalone authentication services for items you already own. Contact us with photos and details, and we'll provide a detailed authentication report with a certificate.</p>
+          </div>
+          
+          <div class="faq-item">
+            <h3>What payment methods do you accept?</h3>
+            <p>We accept all major credit cards, PayPal, and bank transfers. All transactions are secured with industry-standard encryption and buyer protection.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer id="contact-footer" class="site-footer">
+    <div class="container footer-grid px-3 px-sm-4">
+      <section class="footer-brand">
+        <a class="brand" href="index.html" aria-label="Gnailed home">
+          <span class="brand-mark" aria-hidden="true">G</span>
+          <span class="brand-lockup">
+            <span class="brand-wordmark">Gnailed</span>
+            <span class="brand-tagline" aria-hidden="true">GNAILED IT!</span>
+          </span>
+        </a>
+        <p class="muted">The modern marketplace for pre‑loved luxury. Buy better, sell smarter.</p>
+      </section>
+      <nav class="footer-nav" aria-label="Footer">
+        <h3>Company</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <section class="footer-contact">
+        <h3>Contact</h3>
+        <ul>
+          <li><a href="mailto:gnailedit@gmail.com">gnailedit@gmail.com</a></li>
+          <li><a href="https://instagram.com/gnailedit" target="_blank" rel="noopener">@gnailedit</a></li>
+          <li><a href="tel:+639923477440">(+63) 992 347 7440</a></li>
+        </ul>
+      </section>
+    </div>
+    <div class="container legal px-3 px-sm-4">
+      <small>© <span id="year">2025</span> Gnailed. All rights reserved.</small>
+    </div>
+  </footer>
+  
+  <!-- Scroll to top button -->
+  <button id="scroll-top" class="scroll-top-btn" aria-label="Scroll to top">
+    ↑
+  </button>
+  
+  <!-- JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

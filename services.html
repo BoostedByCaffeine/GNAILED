@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore our curated collections of authenticated luxury pre-loved fashion at Gnailed.">
+  <title>Services & Collections — Gnailed</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;700&family=UnifrakturCook:wght@700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%23000'/%3E%3Ctext x='32' y='42' text-anchor='middle' font-family='UnifrakturCook, Playfair Display, Georgia, serif' font-size='38' fill='%23fff' font-weight='700'%3EG%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner px-3 px-sm-4">
+      <a class="brand" href="index.html" aria-label="Gnailed home">
+        <span class="brand-mark" aria-hidden="true">G</span>
+        <span class="brand-lockup">
+          <span class="brand-wordmark">Gnailed</span>
+          <span class="brand-tagline" aria-hidden="true">GNAILED IT!</span>
+        </span>
+      </a>
+      <!-- Mobile menu toggle button -->
+      <button id="menu-btn" class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span class="hamburger"></span>
+      </button>
+      
+      <nav id="nav-links" class="primary-nav" aria-label="Primary">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html" class="active">Services</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      
+      <!-- Dark mode toggle button -->
+      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+        <span class="theme-icon">🌙</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <!-- Page Hero -->
+    <section class="page-hero">
+      <div class="container px-3 px-sm-4">
+        <h1>Our Services & Collections</h1>
+        <p class="hero-subtitle">Curated luxury fashion, authenticated and ready to wear.</p>
+      </div>
+    </section>
+
+    <!-- Services Overview -->
+    <section class="section">
+      <div class="container px-3 px-sm-4">
+        <header class="section-header">
+          <h2>What We Offer</h2>
+          <p>Comprehensive services for buyers and sellers of luxury fashion</p>
+        </header>
+        <div class="services-grid-enhanced">
+          <article class="service-card-enhanced">
+            <div class="service-icon-large">🛍️</div>
+            <h3>Buy Pre-Loved Luxury</h3>
+            <p>Browse our curated collection of authenticated designer pieces. From Chrome Hearts to Louis Vuitton, find your next statement piece at a fraction of retail price.</p>
+            <ul class="service-features">
+              <li>100% authenticated items</li>
+              <li>Detailed condition reports</li>
+              <li>Secure checkout</li>
+              <li>Fast shipping</li>
+            </ul>
+            <a href="#shop" class="service-cta">Start Shopping →</a>
+          </article>
+          
+          <article class="service-card-enhanced">
+            <div class="service-icon-large">💰</div>
+            <h3>Sell Your Designer Items</h3>
+            <p>Turn your closet into cash. List your luxury pieces with us and reach thousands of fashion-conscious buyers looking for authenticated pre-loved fashion.</p>
+            <ul class="service-features">
+              <li>Free authentication service</li>
+              <li>Professional photography</li>
+              <li>Competitive commission rates</li>
+              <li>Quick payouts</li>
+            </ul>
+            <a href="contact.html" class="service-cta">Start Selling →</a>
+          </article>
+          
+          <article class="service-card-enhanced">
+            <div class="service-icon-large">🔐</div>
+            <h3>Authentication Services</h3>
+            <p>Not sure if your piece is authentic? Our expert team can verify your luxury items with detailed reports and certificates of authenticity.</p>
+            <ul class="service-features">
+              <li>Expert authenticators</li>
+              <li>Detailed inspection reports</li>
+              <li>Certificate of authenticity</li>
+              <li>Fast turnaround</li>
+            </ul>
+            <a href="contact.html" class="service-cta">Get Authenticated →</a>
+          </article>
+          
+          <article class="service-card-enhanced">
+            <div class="service-icon-large">📦</div>
+            <h3>Consignment Program</h3>
+            <p>Let us handle everything. Our white-glove consignment service takes care of authentication, photography, listing, and shipping for premium items.</p>
+            <ul class="service-features">
+              <li>Full-service handling</li>
+              <li>Premium placement</li>
+              <li>Marketing support</li>
+              <li>Insured storage</li>
+            </ul>
+            <a href="contact.html" class="service-cta">Learn More →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Brand Collections -->
+    <section class="section" style="background: var(--surface);">
+      <div class="container px-3 px-sm-4">
+        <header class="section-header">
+          <h2>Shop by Brand</h2>
+          <p>Curated selections from iconic luxury houses</p>
+        </header>
+        <div class="card-grid">
+          <article class="card">
+            <div class="card-media"><img src="pics/chromehearts.jpg" alt="Chrome Hearts collection"></div>
+            <div class="card-body">
+              <h3>Chrome Hearts</h3>
+              <p>Gothic luxury with signature crosses and bold graphics. Tees, hoodies, and accessories from the cult-favorite brand.</p>
+              <a class="text-link" href="#shop">Browse Collection →</a>
+            </div>
+          </article>
+          
+          <article class="card">
+            <div class="card-media"><img src="pics/amiparis.jpg" alt="AMI Paris collection"></div>
+            <div class="card-body">
+              <h3>AMI Paris</h3>
+              <p>Minimalist French elegance with the iconic Ami de Coeur. Sweaters, tees, and outerwear for the modern wardrobe.</p>
+              <a class="text-link" href="#shop">Browse Collection →</a>
+            </div>
+          </article>
+          
+          <article class="card">
+            <div class="card-media"><img src="pics/polorl.jpg" alt="Polo Ralph Lauren collection"></div>
+            <div class="card-body">
+              <h3>Polo Ralph Lauren</h3>
+              <p>Timeless Americana with the signature pony. Classic polos, sweaters, and preppy essentials that never go out of style.</p>
+              <a class="text-link" href="#shop">Browse Collection →</a>
+            </div>
+          </article>
+          
+          <article class="card">
+            <div class="card-media"><img src="pics/louisvuitton.jpg" alt="Louis Vuitton collection"></div>
+            <div class="card-body">
+              <h3>Louis Vuitton</h3>
+              <p>Elevated luxury with iconic monograms. Tees, accessories, and statement pieces from the legendary French maison.</p>
+              <a class="text-link" href="#shop">Browse Collection →</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Items Gallery -->
+    <section class="section">
+      <div class="container px-3 px-sm-4">
+        <header class="section-header">
+          <h2>Featured Items</h2>
+          <p>Hand-picked pieces available now</p>
+        </header>
+        <div class="featured-gallery">
+          <figure class="gallery-item">
+            <div class="gallery-item-image-wrapper">
+              <img src="xtra/xtraPic6.jpg" alt="Featured luxury item 1">
+            </div>
+            <figcaption>
+              <h4>Polo Ralph Lauren Blue Polo Shirt Tee</h4>
+              <p class="price">$299</p>
+              <a href="#" class="button button-primary">View Details</a>
+            </figcaption>
+          </figure>
+          
+          <figure class="gallery-item">
+            <div class="gallery-item-image-wrapper">
+              <img src="xtra/xtraPic7.jpg" alt="Featured luxury item 2">
+            </div>
+            <figcaption>
+              <h4>Louis Vuitton Sweatshirt</h4>
+              <p class="price">$449</p>
+              <a href="#" class="button button-primary">View Details</a>
+            </figcaption>
+          </figure>
+          
+          <figure class="gallery-item">
+            <div class="gallery-item-image-wrapper">
+              <img src="xtra/xtraPic8.jpg" alt="Featured luxury item 3">
+            </div>
+            <figcaption>
+              <h4>Louis Vuitton Carpet Logo Tee</h4>
+              <p class="price">$379</p>
+              <a href="#" class="button button-primary">View Details</a>
+            </figcaption>
+          </figure>
+          
+          <figure class="gallery-item">
+            <div class="gallery-item-image-wrapper">
+              <img src="pics/newarrival1.jpg" alt="Featured luxury item 4">
+            </div>
+            <figcaption>
+              <h4>Chrome Hearts X A Bathing Ape Collab Tee</h4>
+              <p class="price">$599</p>
+              <a href="#" class="button button-primary">View Details</a>
+            </figcaption>
+          </figure>
+          
+          <figure class="gallery-item">
+            <div class="gallery-item-image-wrapper">
+              <img src="pics/newarrival2.jpg" alt="Featured luxury item 5">
+            </div>
+            <figcaption>
+              <h4>Vlone Rhinnestone Big Logo Tee</h4>
+              <p class="price">$329</p>
+              <a href="#" class="button button-primary">View Details</a>
+            </figcaption>
+          </figure>
+          
+          <figure class="gallery-item">
+            <div class="gallery-item-image-wrapper">
+              <img src="pics/newarrival3.jpg" alt="Featured luxury item 6">
+            </div>
+            <figcaption>
+              <h4>Louis Vuitton Tee</h4>
+              <p class="price">$249</p>
+              <a href="#" class="button button-primary">View Details</a>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="section how-it-works" style="background: var(--surface);">
+      <div class="container px-3 px-sm-4">
+        <header class="section-header">
+          <h2>How It Works</h2>
+          <p>Simple, secure, and transparent</p>
+        </header>
+        <div class="steps-grid">
+          <div class="step-item">
+            <div class="step-number">1</div>
+            <h3>Browse & Select</h3>
+            <p>Explore our curated collection of authenticated luxury pieces. Filter by brand, size, condition, and price.</p>
+          </div>
+          <div class="step-item">
+            <div class="step-number">2</div>
+            <h3>Review Details</h3>
+            <p>Check detailed photos, measurements, and condition reports. Every flaw is disclosed transparently.</p>
+          </div>
+          <div class="step-item">
+            <div class="step-number">3</div>
+            <h3>Secure Checkout</h3>
+            <p>Complete your purchase with secure payment processing. Buyer protection included on every order.</p>
+          </div>
+          <div class="step-item">
+            <div class="step-number">4</div>
+            <h3>Fast Delivery</h3>
+            <p>Your item ships within 24-48 hours with tracking. Arrives carefully packaged and ready to wear.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section cta-section">
+      <div class="container px-3 px-sm-4">
+        <div class="cta-box">
+          <h2>Ready to Start Shopping?</h2>
+          <p>Join thousands of fashion lovers buying and selling authenticated luxury.</p>
+          <div class="cta-group">
+            <a class="button button-primary" href="contact.html">Get Started</a>
+            <a class="button button-ghost" href="about.html">Learn More</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contact" class="site-footer">
+    <div class="container footer-grid px-3 px-sm-4">
+      <section class="footer-brand">
+        <a class="brand" href="index.html" aria-label="Gnailed home">
+          <span class="brand-mark" aria-hidden="true">G</span>
+          <span class="brand-lockup">
+            <span class="brand-wordmark">Gnailed</span>
+            <span class="brand-tagline" aria-hidden="true">GNAILED IT!</span>
+          </span>
+        </a>
+        <p class="muted">The modern marketplace for pre‑loved luxury. Buy better, sell smarter.</p>
+      </section>
+      <nav class="footer-nav" aria-label="Footer">
+        <h3>Company</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <section class="footer-contact">
+        <h3>Contact</h3>
+        <ul>
+          <li><a href="mailto:gnailedit@gmail.com">gnailedit@gmail.com</a></li>
+          <li><a href="https://instagram.com/gnailedit" target="_blank" rel="noopener">@gnailedit</a></li>
+          <li><a href="tel:+639923477440">(+63) 992 347 7440</a></li>
+        </ul>
+      </section>
+    </div>
+    <div class="container legal px-3 px-sm-4">
+      <small>© <span id="year">2025</span> Gnailed. All rights reserved.</small>
+    </div>
+  </footer>
+  
+  <!-- Scroll to top button -->
+  <button id="scroll-top" class="scroll-top-btn" aria-label="Scroll to top">
+    ↑
+  </button>
+  
+  <!-- JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

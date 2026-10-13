@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Gnailed — luxury pre-loved garments, authenticated and curated. Buy and sell premium fashion sustainably.">
+  <title>Gnailed — Luxury Pre‑Loved Garments</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;700&family=UnifrakturCook:wght@700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%23000'/%3E%3Ctext x='32' y='42' text-anchor='middle' font-family='UnifrakturCook, Playfair Display, Georgia, serif' font-size='38' fill='%23fff' font-weight='700'%3EG%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner px-3 px-sm-4">
+      <a class="brand" href="#" aria-label="Gnailed home">
+        <span class="brand-mark" aria-hidden="true">G</span>
+        <span class="brand-lockup">
+          <span class="brand-wordmark">Gnailed</span>
+          <span class="brand-tagline" aria-hidden="true">GNAILED IT!</span>
+        </span>
+      </a>
+      <!-- Mobile menu toggle button -->
+      <button id="menu-btn" class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span class="hamburger"></span>
+      </button>
+      
+      <nav id="nav-links" class="primary-nav" aria-label="Primary">
+        <ul>
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      
+      <!-- Dark mode toggle button -->
+      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+        <span class="theme-icon">🌙</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="hero" aria-label="Featured banner">
+      <div class="hero-media" role="img" aria-label="Chrome Hearts garments piled up"></div>
+      <div class="container hero-content px-3 px-sm-4">
+        <h1>Luxury, Reimagined. Pre‑Loved.</h1>
+        <div class="hero-tagline" role="note" aria-label="Tagline">GNAILED IT!</div>
+        <p>Discover authenticated designer pieces from the world's most coveted wardrobes. Sustainably circular. Distinctly yours.</p>
+        <div class="cta-group">
+          <a class="button button-primary" href="#shop">Shop New Arrivals</a>
+          <a class="button button-ghost" href="#about">Why Gnailed</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Image Carousel Section -->
+    <section class="carousel-section" aria-label="Featured carousel">
+      <div class="carousel-container">
+        <div class="carousel-slide active">
+          <img src="carouselPics/carouselPic1.png" alt="Featured collection 1">
+        </div>
+        <div class="carousel-slide">
+          <img src="carouselPics/carouselPic2.png" alt="Featured collection 2">
+        </div>
+        <div class="carousel-slide">
+          <img src="carouselPics/carouselPic3.png" alt="Featured collection 3">
+        </div>
+        <div class="carousel-slide">
+          <img src="carouselPics/carouselPic4.png" alt="Featured collection 4">
+        </div>
+        
+        <!-- Carousel navigation buttons -->
+        <button class="carousel-btn prev" aria-label="Previous slide">‹</button>
+        <button class="carousel-btn next" aria-label="Next slide">›</button>
+        
+        <!-- Carousel indicators -->
+        <div class="carousel-indicators">
+          <button class="indicator active" data-slide="0" aria-label="Go to slide 1"></button>
+          <button class="indicator" data-slide="1" aria-label="Go to slide 2"></button>
+          <button class="indicator" data-slide="2" aria-label="Go to slide 3"></button>
+          <button class="indicator" data-slide="3" aria-label="Go to slide 4"></button>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="about section">
+      <div class="container split px-3 px-sm-4">
+        <div class="split-col">
+          <h2>Curated. Authenticated. Circular.</h2>
+          <p>Gnailed brings a modern marketplace experience for pre‑loved luxury. Every item is carefully vetted for authenticity and condition, photographed to perfection, and presented with transparent details.</p>
+          <ul class="checks" role="list">
+            <li>Multi‑point authenticity verification</li>
+            <li>Condition grading and detailed measurements</li>
+            <li>Secure payments and buyer protection</li>
+          </ul>
+        </div>
+        <div class="split-col visual">
+          <figure class="about-figure">
+            <img src="pics/curatedauthenticatedcircular.jpg" alt="Curated, authenticated, circular luxury garment display">
+            <figcaption>Every texture tells a story.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="section services">
+      <div class="container px-3 px-sm-4">
+        <header class="section-header">
+          <h2>Shop Tees by Brand</h2>
+          <p>Curated selections from iconic houses.</p>
+        </header>
+        <div class="card-grid">
+          <article class="card">
+            <div class="card-media"><img src="pics/chromehearts.jpg" alt="Chrome Hearts tee product photo"></div>
+            <div class="card-body">
+              <h3>Chrome Hearts Tees & Hoodies</h3>
+              <p>Monochrome graphics, bold crosses, unmistakable attitude.</p>
+              <a class="text-link" href="#shop">Browse Chrome Hearts</a>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card-media"><img src="pics/amiparis.jpg" alt="AMI Paris tee product photo"></div>
+            <div class="card-body">
+              <h3>AMI Paris Tees & Sweaters</h3>
+              <p>Minimalist staples with the iconic Ami de Coeur.</p>
+              <a class="text-link" href="#shop">Browse AMI</a>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card-media"><img src="pics/polorl.jpg" alt="Polo Ralph Lauren tee product photo"></div>
+            <div class="card-body">
+              <h3>Polo Ralph Lauren Tees & Sweaters</h3>
+              <p>Timeless Americana with the signature pony.</p>
+              <a class="text-link" href="#shop">Browse Polo RL</a>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card-media"><img src="pics/louisvuitton.jpg" alt="Louis Vuitton tee product photo"></div>
+            <div class="card-body">
+              <h3>Louis Vuitton Tees</h3>
+              <p>Elevated monograms and refined silhouettes.</p>
+              <a class="text-link" href="#shop">Browse LV</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="shop" class="section featured" aria-label="Feature highlights">
+      <div class="container px-3 px-sm-4">
+        <header class="section-header">
+          <h2>New Arrivals</h2>
+          <p>Fresh drops from trusted closets, hand‑picked daily.</p>
+        </header>
+        <div class="masonry">
+          <figure class="tile">
+            <a href="#zoom1" aria-label="Zoom image 1" class="tile-image-wrapper">
+              <img src="pics/newarrival1.jpg" alt="Chrome Hearts X A Bathing Ape Collab Tee">
+            </a>
+            <a href="#shop" class="button button-primary buy-now">Buy Now</a>
+            <figcaption>New Arrival — 1</figcaption>
+          </figure>
+          <figure class="tile">
+            <a href="#zoom2" aria-label="Zoom image 2" class="tile-image-wrapper">
+              <img src="pics/newarrival2.jpg" alt="New arrival 2">
+            </a>
+            <a href="#shop" class="button button-primary buy-now">Buy Now</a>
+            <figcaption>New Arrival — 2</figcaption>
+          </figure>
+          <figure class="tile">
+            <a href="#zoom3" aria-label="Zoom image 3" class="tile-image-wrapper">
+              <img src="pics/newarrival3.jpg" alt="New arrival 3">
+            </a>
+            <a href="#shop" class="button button-primary buy-now">Buy Now</a>
+            <figcaption>New Arrival — 3</figcaption>
+          </figure>
+          <figure class="tile">
+            <a href="#zoom4" aria-label="Zoom image 4" class="tile-image-wrapper">
+              <img src="pics/newarrival4.jpg" alt="New arrival 4">
+            </a>
+            <a href="#shop" class="button button-primary buy-now">Buy Now</a>
+            <figcaption>New Arrival — 4</figcaption>
+          </figure>
+          <figure class="tile">
+            <a href="#zoom5" aria-label="Zoom image 5" class="tile-image-wrapper">
+              <img src="pics/newarrival5.jpg" alt="New arrival 5">
+            </a>
+            <a href="#shop" class="button button-primary buy-now">Buy Now</a>
+            <figcaption>New Arrival — 5</figcaption>
+          </figure>
+          <figure class="tile">
+            <a href="#zoom6" aria-label="Zoom image 6" class="tile-image-wrapper">
+              <img src="pics/newarrival6.jpg" alt="New arrival 6">
+            </a>
+            <a href="#shop" class="button button-primary buy-now">Buy Now</a>
+            <figcaption>New Arrival — 6</figcaption>
+          </figure>
+        </div>
+        <!-- CSS-only lightboxes -->
+        <div id="zoom1" class="lightbox" role="dialog" aria-modal="true" aria-label="Zoomed image 1"><a class="close" href="#">Close</a><img src="pics/newarrival1.jpg" alt="New arrival 1 large"></div>
+        <div id="zoom2" class="lightbox" role="dialog" aria-modal="true" aria-label="Zoomed image 2"><a class="close" href="#">Close</a><img src="pics/newarrival2.jpg" alt="New arrival 2 large"></div>
+        <div id="zoom3" class="lightbox" role="dialog" aria-modal="true" aria-label="Zoomed image 3"><a class="close" href="#">Close</a><img src="pics/newarrival3.jpg" alt="New arrival 3 large"></div>
+        <div id="zoom4" class="lightbox" role="dialog" aria-modal="true" aria-label="Zoomed image 4"><a class="close" href="#">Close</a><img src="pics/newarrival4.jpg" alt="New arrival 4 large"></div>
+        <div id="zoom5" class="lightbox" role="dialog" aria-modal="true" aria-label="Zoomed image 5"><a class="close" href="#">Close</a><img src="pics/newarrival5.jpg" alt="New arrival 5 large"></div>
+        <div id="zoom6" class="lightbox" role="dialog" aria-modal="true" aria-label="Zoomed image 6"><a class="close" href="#">Close</a><img src="pics/newarrival6.jpg" alt="New arrival 6 large"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contact" class="site-footer">
+    <div class="container footer-grid px-3 px-sm-4">
+      <section class="footer-brand">
+        <a class="brand" href="#" aria-label="Gnailed home">
+          <span class="brand-mark" aria-hidden="true">G</span>
+          <span class="brand-lockup">
+            <span class="brand-wordmark">Gnailed</span>
+            <span class="brand-tagline" aria-hidden="true">GNAILED IT!</span>
+          </span>
+        </a>
+        <p class="muted">The modern marketplace for pre‑loved luxury. Buy better, sell smarter.</p>
+      </section>
+      <nav class="footer-nav" aria-label="Footer">
+        <h3>Company</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <section class="footer-contact">
+        <h3>Contact</h3>
+        <ul>
+          <li><a href="mailto:gnailedit@gmail.com">gnailedit@gmail.com</a></li>
+          <li><a href="https://instagram.com/gnailedit" target="_blank" rel="noopener">@gnailedit</a></li>
+          <li><a href="tel:+639923477440">(+63) 992 347 7440</a></li>
+        </ul>
+      </section>
+    </div>
+    <div class="container legal px-3 px-sm-4">
+      <small>© <span id="year">2025</span> Gnailed. All rights reserved.</small>
+    </div>
+  </footer>
+  
+  <!-- Scroll to top button -->
+  <button id="scroll-top" class="scroll-top-btn" aria-label="Scroll to top">
+    ↑
+  </button>
+  
+  <!-- JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
+
