@@ -1,4 +1,4 @@
-﻿/*
+/*
   Gnailed â€” Interactive Features  (2026 Edition)
   Vanilla JavaScript â€” Mobile-first, accessible, performant
 */
@@ -118,12 +118,20 @@ if (themeToggle) {
   themeToggle.addEventListener('click', () => {
     const isDark = document.body.classList.toggle('dark-mode');
     localStorage.setItem('gnailed-theme', isDark ? 'dark' : 'light');
+    themeToggle.blur();
+  });
+
+  // Ensure button resets cleanly on touch release
+  ['touchend', 'pointerup'].forEach(evt => {
+    themeToggle.addEventListener(evt, () => {
+      setTimeout(() => themeToggle.blur(), 50);
+    });
   });
 }
 
 
 // ============================================================
-// ðŸ”¹ 4. SCROLL-TO-TOP BUTTON
+// 4. SCROLL-TO-TOP BUTTON
 // ============================================================
 const scrollTopBtn = document.getElementById('scroll-top');
 
@@ -135,6 +143,7 @@ if (scrollTopBtn) {
 
   scrollTopBtn.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
+    scrollTopBtn.blur();
   });
 }
 
