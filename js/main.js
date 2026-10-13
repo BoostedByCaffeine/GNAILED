@@ -195,7 +195,43 @@ if (heroMedia) {
 
 
 // ============================================================
-// ðŸ”¹ 8. SMOOTH SCROLL FOR ANCHOR LINKS
+// 8. PRODUCT CARDS (Tap to open, tap again to return to normal)
+// ============================================================
+const productTiles = document.querySelectorAll('.tile');
+
+if (productTiles.length > 0) {
+  productTiles.forEach(tile => {
+    tile.addEventListener('click', (e) => {
+      // Allow direct clicks on Buy Now button and detail zoom preview link to navigate
+      if (e.target.closest('.buy-now') || e.target.closest('.tile-zoom-preview')) {
+        return;
+      }
+
+      e.preventDefault();
+      const wasActive = tile.classList.contains('is-active');
+
+      // Close all cards
+      productTiles.forEach(t => t.classList.remove('is-active'));
+
+      // If this card was not already active, open it.
+      // If it WAS active, it remains closed, returning the card to its normal state!
+      if (!wasActive) {
+        tile.classList.add('is-active');
+      }
+    });
+  });
+
+  // Clicking outside closes any open product card
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.tile')) {
+      productTiles.forEach(t => t.classList.remove('is-active'));
+    }
+  });
+}
+
+
+// ============================================================
+// 9. SMOOTH SCROLL FOR ANCHOR LINKS
 // ============================================================
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
@@ -321,6 +357,22 @@ if ('IntersectionObserver' in window) {
   });
   document.querySelectorAll('img[data-src]').forEach(img => imgObserver.observe(img));
 }
+
+
+// ============================================================
+// 13. FOOTER ACCORDIONS (Mobile Tap to Expand/Collapse)
+// ============================================================
+document.querySelectorAll('.footer-accordion-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    if (window.innerWidth >= 768) return;
+
+    const accordion = btn.closest('.footer-accordion');
+    if (!accordion) return;
+
+    const isOpen = accordion.classList.toggle('is-open');
+    btn.setAttribute('aria-expanded', String(isOpen));
+  });
+});
 
 
 // ============================================================

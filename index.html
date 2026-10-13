@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300;0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;0,14..32,800;1,14..32,400&family=Playfair+Display:wght@500;600;700&family=UnifrakturCook:wght@700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=2.3">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
   <link rel="apple-touch-icon" href="favicon.png">
@@ -351,76 +351,209 @@
   <!-- ============================================================
        FOOTER
        ============================================================ -->
+  <!-- ============================================================
+       FOOTER — LUXURY E-COMMERCE
+       ============================================================ -->
   <footer id="contact" class="site-footer">
-    <div class="container footer-grid">
 
-      <!-- Brand -->
-      <section class="footer-brand">
-        <a class="brand" href="#" aria-label="Gnailed home">
-          <span class="brand-mark" aria-hidden="true">G</span>
-          <span class="brand-lockup">
-            <span class="brand-wordmark">Gnailed</span>
-            <span class="brand-tagline" aria-hidden="true">GNAILED IT!</span>
-          </span>
-        </a>
-        <p>The modern marketplace for pre‑loved luxury. Buy better, sell smarter.</p>
-        <div class="footer-social">
-          <a href="https://instagram.com/gnailedit" target="_blank" rel="noopener" class="social-icon" aria-label="Instagram">
-            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <rect x="3" y="3" width="18" height="18" rx="5"/>
-              <circle cx="12" cy="12" r="4"/>
-              <circle cx="17.5" cy="6.5" r="1" fill="currentColor"/>
-            </svg>
-          </a>
-          <a href="mailto:gnailedit@gmail.com" class="social-icon" aria-label="Email">
-            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <rect x="3" y="5" width="18" height="14" rx="2"/>
-              <path d="m3 7 9 6 9-6"/>
-            </svg>
-          </a>
-          <a href="tel:+639923477440" class="social-icon" aria-label="Phone">
-            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M4.5 3.5h3.1a1 1 0 0 1 .98.8l.6 3a1 1 0 0 1-.29.95L7.2 9.94a13.3 13.3 0 0 0 6.86 6.86l1.69-1.69a1 1 0 0 1 .95-.29l3 .6a1 1 0 0 1 .8.98V19.5a1 1 0 0 1-1 1A16.5 16.5 0 0 1 3.5 4.5a1 1 0 0 1 1-1z"/>
-            </svg>
-          </a>
+    <!-- 1. VIP Newsletter at top -->
+    <section class="footer-newsletter-section">
+      <div class="container">
+        <div class="newsletter-card">
+          <div class="newsletter-copy">
+            <span class="newsletter-badge">VIP DROP ACCESS</span>
+            <h2 class="newsletter-title">Stay In The Loop</h2>
+            <p class="newsletter-subtitle">Receive private drop notifications, archival releases, and authenticated luxury curations.</p>
+          </div>
+          <form class="newsletter-form" onsubmit="return false;">
+            <input class="newsletter-input" type="email" placeholder="Enter your email address" aria-label="Email address for drops" required>
+            <button class="newsletter-btn" type="submit">Join</button>
+          </form>
+          <span class="newsletter-note">By subscribing you agree to our <a href="#privacy">Privacy Policy</a>. Unsubscribe anytime.</span>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- Nav links -->
-      <nav class="footer-nav" aria-label="Footer navigation">
-        <h3>Company</h3>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
-
-      <!-- Contact -->
-      <section class="footer-contact">
-        <h3>Contact</h3>
-        <ul>
-          <li><a href="mailto:gnailedit@gmail.com">gnailedit@gmail.com</a></li>
-          <li><a href="https://instagram.com/gnailedit" target="_blank" rel="noopener">@gnailedit</a></li>
-          <li><a href="tel:+639923477440">(+63) 992 347 7440</a></li>
-        </ul>
-      </section>
-
-      <!-- Newsletter -->
-      <section class="footer-newsletter">
-        <h3>Stay in the Loop</h3>
-        <p>Get notified on rare drops and exclusive listings.</p>
-        <form class="newsletter-form" onsubmit="return false;">
-          <input class="newsletter-input" type="email" placeholder="your@email.com" aria-label="Email address">
-          <button class="newsletter-btn" type="submit">Join</button>
-        </form>
-      </section>
-
+    <!-- 2. Trust & Authenticity Badges -->
+    <div class="footer-trust-strip">
+      <div class="container trust-grid">
+        <div class="trust-item">
+          <span class="trust-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              <path d="m9 12 2 2 4-4"/>
+            </svg>
+          </span>
+          <div class="trust-text">
+            <strong>100% Authenticity Guaranteed</strong>
+            <span>Multi-point physical inspection</span>
+          </div>
+        </div>
+        <div class="trust-item">
+          <span class="trust-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="1" y="3" width="15" height="13"/>
+              <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/>
+              <circle cx="5.5" cy="18.5" r="2.5"/>
+              <circle cx="18.5" cy="18.5" r="2.5"/>
+            </svg>
+          </span>
+          <div class="trust-text">
+            <strong>Insured Express Delivery</strong>
+            <span>Door-to-door verified tracking</span>
+          </div>
+        </div>
+        <div class="trust-item">
+          <span class="trust-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <polyline points="12 6 12 12 16 14"/>
+            </svg>
+          </span>
+          <div class="trust-text">
+            <strong>Verified Pre-Loved Archive</strong>
+            <span>Condition graded & pristine</span>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <div class="container legal">
-      <small>© <span id="year">2025</span> Gnailed. All rights reserved.</small>
+    <!-- 3. Navigation & Customer Care (Collapsible on Mobile, Grid on Desktop) -->
+    <div class="container footer-main">
+      <div class="footer-columns">
+
+        <!-- Brand Block -->
+        <div class="footer-col footer-col-brand">
+          <a class="brand" href="index.html" aria-label="Gnailed home">
+            <span class="brand-mark" aria-hidden="true">G</span>
+            <span class="brand-lockup">
+              <span class="brand-wordmark">Gnailed</span>
+              <span class="brand-tagline" aria-hidden="true">GNAILED IT!</span>
+            </span>
+          </a>
+          <p class="brand-desc">The modern marketplace for authenticated pre‑loved luxury garments and archival streetwear.</p>
+          <div class="footer-social">
+            <a href="https://instagram.com/gnailedit" target="_blank" rel="noopener" class="social-icon" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="3" y="3" width="18" height="18" rx="5"/>
+                <circle cx="12" cy="12" r="4"/>
+                <circle cx="17.5" cy="6.5" r="1" fill="currentColor"/>
+              </svg>
+            </a>
+            <a href="mailto:gnailedit@gmail.com" class="social-icon" aria-label="Email">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="3" y="5" width="18" height="14" rx="2"/>
+                <path d="m3 7 9 6 9-6"/>
+              </svg>
+            </a>
+            <a href="tel:+639923477440" class="social-icon" aria-label="Phone">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M4.5 3.5h3.1a1 1 0 0 1 .98.8l.6 3a1 1 0 0 1-.29.95L7.2 9.94a13.3 13.3 0 0 0 6.86 6.86l1.69-1.69a1 1 0 0 1 .95-.29l3 .6a1 1 0 0 1 .8.98V19.5a1 1 0 0 1-1 1A16.5 16.5 0 0 1 3.5 4.5a1 1 0 0 1 1-1z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Accordion 1: Company -->
+        <div class="footer-col footer-accordion">
+          <button class="footer-accordion-btn" type="button" aria-expanded="false">
+            <span>Company</span>
+            <svg class="accordion-chevron" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="6 9 12 15 18 9"/>
+            </svg>
+          </button>
+          <div class="footer-accordion-content">
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About Gnailed</a></li>
+              <li><a href="services.html">Authentication Services</a></li>
+              <li><a href="services.html#consignment">Consignment & Selling</a></li>
+              <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Accordion 2: Customer Care -->
+        <div class="footer-col footer-accordion">
+          <button class="footer-accordion-btn" type="button" aria-expanded="false">
+            <span>Customer Care</span>
+            <svg class="accordion-chevron" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="6 9 12 15 18 9"/>
+            </svg>
+          </button>
+          <div class="footer-accordion-content">
+            <ul class="contact-list-formal">
+              <li>
+                <a href="mailto:gnailedit@gmail.com" class="contact-link-formal">
+                  <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <rect x="3" y="5" width="18" height="14" rx="2"/>
+                    <path d="m3 7 9 6 9-6"/>
+                  </svg>
+                  <span>gnailedit@gmail.com</span>
+                </a>
+              </li>
+              <li>
+                <a href="https://instagram.com/gnailedit" target="_blank" rel="noopener" class="contact-link-formal">
+                  <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <rect x="3" y="3" width="18" height="18" rx="5"/>
+                    <circle cx="12" cy="12" r="4"/>
+                    <circle cx="17.5" cy="6.5" r="1" fill="currentColor"/>
+                  </svg>
+                  <span>@gnailedit</span>
+                </a>
+              </li>
+              <li>
+                <a href="tel:+639923477440" class="contact-link-formal">
+                  <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M4.5 3.5h3.1a1 1 0 0 1 .98.8l.6 3a1 1 0 0 1-.29.95L7.2 9.94a13.3 13.3 0 0 0 6.86 6.86l1.69-1.69a1 1 0 0 1 .95-.29l3 .6a1 1 0 0 1 .8.98V19.5a1 1 0 0 1-1 1A16.5 16.5 0 0 1 3.5 4.5a1 1 0 0 1 1-1z"/>
+                  </svg>
+                  <span>(+63) 992 347 7440</span>
+                </a>
+              </li>
+              <li class="contact-hours">Client Care: Mon – Sat, 10:00 AM – 7:00 PM PHT</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Accordion 3: Legal & Policies -->
+        <div class="footer-col footer-accordion">
+          <button class="footer-accordion-btn" type="button" aria-expanded="false">
+            <span>Legal & Policies</span>
+            <svg class="accordion-chevron" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="6 9 12 15 18 9"/>
+            </svg>
+          </button>
+          <div class="footer-accordion-content">
+            <ul>
+              <li><a href="#terms">Terms & Conditions</a></li>
+              <li><a href="#privacy">Privacy Policy</a></li>
+              <li><a href="#authenticity">Authenticity Guarantee</a></li>
+              <li><a href="#shipping">Shipping & Returns</a></li>
+              <li><a href="#faq">Frequently Asked Questions</a></li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 4. Legal & Copyright Bottom Strip -->
+    <div class="footer-bottom-strip">
+      <div class="container footer-bottom-inner">
+        <div class="footer-legal-links">
+          <a href="#terms">Terms</a>
+          <span>·</span>
+          <a href="#privacy">Privacy</a>
+          <span>·</span>
+          <a href="#authenticity">Authenticity</a>
+          <span>·</span>
+          <a href="#shipping">Shipping & Returns</a>
+        </div>
+        <div class="footer-meta">
+          <small>© <span id="year">2026</span> Gnailed. All rights reserved.</small>
+          <span class="footer-region">PHP (₱) · Philippines</span>
+        </div>
+      </div>
     </div>
   </footer>
 
@@ -432,7 +565,7 @@
   </button>
 
   <!-- JavaScript -->
-  <script src="js/main.js"></script>
+  <script src="js/main.js?v=2.2"></script>
 
 </body>
 </html>
