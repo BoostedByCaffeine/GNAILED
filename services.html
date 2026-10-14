@@ -7,7 +7,7 @@
   <title>Services & Collections — Gnailed</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;700&family=UnifrakturCook:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600;700&family=Playfair+Display:wght@500;700&family=UnifrakturCook:wght@700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css?v=2.3">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
@@ -164,38 +164,38 @@
         </header>
         <div class="card-grid">
           <article class="card">
-            <div class="card-media"><img src="pics/chromehearts.jpg" alt="Chrome Hearts collection"></div>
+            <div class="card-media"><img src="pics/chromehearts.jpg" alt="Chrome Hearts collection" loading="lazy"></div>
             <div class="card-body">
               <h3>Chrome Hearts</h3>
               <p>Gothic luxury with signature crosses and bold graphics. Tees, hoodies, and accessories from the cult-favorite brand.</p>
-              <a class="text-link" href="#shop">Browse Collection</a>
+              <a class="text-link" href="#shop" data-brand-jump="chrome-hearts">Browse Collection</a>
             </div>
           </article>
           
           <article class="card">
-            <div class="card-media"><img src="pics/amiparis.jpg" alt="AMI Paris collection"></div>
+            <div class="card-media"><img src="pics/amiparis.jpg" alt="AMI Paris collection" loading="lazy"></div>
             <div class="card-body">
               <h3>AMI Paris</h3>
               <p>Minimalist French elegance with the iconic Ami de Coeur. Sweaters, tees, and outerwear for the modern wardrobe.</p>
-              <a class="text-link" href="#shop">Browse Collection</a>
+              <a class="text-link" href="#shop" data-brand-jump="ami-paris">Browse Collection</a>
             </div>
           </article>
           
           <article class="card">
-            <div class="card-media"><img src="pics/polorl.jpg" alt="Polo Ralph Lauren collection"></div>
+            <div class="card-media"><img src="pics/polorl.jpg" alt="Polo Ralph Lauren collection" loading="lazy"></div>
             <div class="card-body">
               <h3>Polo Ralph Lauren</h3>
               <p>Timeless Americana with the signature pony. Classic polos, sweaters, and preppy essentials that never go out of style.</p>
-              <a class="text-link" href="#shop">Browse Collection</a>
+              <a class="text-link" href="#shop" data-brand-jump="polo-rl">Browse Collection</a>
             </div>
           </article>
           
           <article class="card">
-            <div class="card-media"><img src="pics/louisvuitton.jpg" alt="Louis Vuitton collection"></div>
+            <div class="card-media"><img src="pics/louisvuitton.jpg" alt="Louis Vuitton collection" loading="lazy"></div>
             <div class="card-body">
               <h3>Louis Vuitton</h3>
               <p>Elevated luxury with iconic monograms. Tees, accessories, and statement pieces from the legendary French maison.</p>
-              <a class="text-link" href="#shop">Browse Collection</a>
+              <a class="text-link" href="#shop" data-brand-jump="louis-vuitton">Browse Collection</a>
             </div>
           </article>
         </div>
@@ -203,76 +203,161 @@
     </section>
 
     <!-- Featured Items Gallery -->
-    <section class="section">
+    <section id="shop" class="section">
       <div class="container">
         <header class="section-header">
-          <h2>Featured Items</h2>
-          <p>Hand-picked pieces available now</p>
+          <h2>Featured Archive</h2>
+          <p>Hand-picked authenticated pieces available now</p>
         </header>
+
+        <!-- Filter & Search Toolbar -->
+        <div class="shop-toolbar">
+          <div class="filter-pills" role="tablist" aria-label="Filter archive by brand">
+            <button class="filter-pill active" data-filter="all" type="button">All Archive (6)</button>
+            <button class="filter-pill" data-filter="chrome-hearts" type="button">Chrome Hearts</button>
+            <button class="filter-pill" data-filter="louis-vuitton" type="button">Louis Vuitton</button>
+            <button class="filter-pill" data-filter="polo-rl" type="button">Polo RL</button>
+            <button class="filter-pill" data-filter="vlone" type="button">Vlone</button>
+          </div>
+          <div class="shop-search-wrapper">
+            <input type="search" id="archive-search" class="shop-search-input" placeholder="Search piece or serial..." aria-label="Search featured items">
+          </div>
+        </div>
+
         <div class="featured-gallery">
-          <figure class="gallery-item">
+          <figure class="gallery-item"
+                  data-brand="polo-rl"
+                  data-title="Polo Ralph Lauren Blue Polo Shirt Tee"
+                  data-price="₱4,800"
+                  data-size="Size M"
+                  data-condition="9.2/10 Excellent"
+                  data-serial="GNL-PRL-0601"
+                  data-img="xtra/xtraPic6.jpg">
+            <span class="tile-badge">Verified</span>
             <div class="gallery-item-image-wrapper">
-              <img src="xtra/xtraPic6.jpg" alt="Featured luxury item 1">
+              <img src="xtra/xtraPic6.jpg" alt="Polo Ralph Lauren Blue Polo Shirt Tee" loading="lazy">
             </div>
             <figcaption>
+              <div class="tile-specs">
+                <span>SIZE M</span><span>•</span><span>COND 9.2/10</span>
+                <span class="tile-serial">#GNL-0601</span>
+              </div>
               <h4>Polo Ralph Lauren Blue Polo Shirt Tee</h4>
-              <p class="price">$299</p>
-              <a href="#" class="button button-primary">View Details</a>
+              <p class="price">₱4,800</p>
+              <button type="button" class="button button-primary quickview-trigger">View Archive Specs</button>
             </figcaption>
           </figure>
           
-          <figure class="gallery-item">
+          <figure class="gallery-item"
+                  data-brand="louis-vuitton"
+                  data-title="Louis Vuitton Monogram Sweatshirt"
+                  data-price="₱24,500"
+                  data-size="Size L"
+                  data-condition="9.5/10 Mint"
+                  data-serial="GNL-LV-0702"
+                  data-img="xtra/xtraPic7.jpg">
+            <span class="tile-badge">Rare</span>
             <div class="gallery-item-image-wrapper">
-              <img src="xtra/xtraPic7.jpg" alt="Featured luxury item 2">
+              <img src="xtra/xtraPic7.jpg" alt="Louis Vuitton Sweatshirt" loading="lazy">
             </div>
             <figcaption>
-              <h4>Louis Vuitton Sweatshirt</h4>
-              <p class="price">$449</p>
-              <a href="#" class="button button-primary">View Details</a>
+              <div class="tile-specs">
+                <span>SIZE L</span><span>•</span><span>COND 9.5/10</span>
+                <span class="tile-serial">#GNL-0702</span>
+              </div>
+              <h4>Louis Vuitton Monogram Sweatshirt</h4>
+              <p class="price">₱24,500</p>
+              <button type="button" class="button button-primary quickview-trigger">View Archive Specs</button>
             </figcaption>
           </figure>
           
-          <figure class="gallery-item">
+          <figure class="gallery-item"
+                  data-brand="louis-vuitton"
+                  data-title="Louis Vuitton Carpet Logo Tee"
+                  data-price="₱19,800"
+                  data-size="Size L"
+                  data-condition="9.4/10 Mint"
+                  data-serial="GNL-LV-0803"
+                  data-img="xtra/xtraPic8.jpg">
+            <span class="tile-badge">Verified</span>
             <div class="gallery-item-image-wrapper">
-              <img src="xtra/xtraPic8.jpg" alt="Featured luxury item 3">
+              <img src="xtra/xtraPic8.jpg" alt="Louis Vuitton Carpet Logo Tee" loading="lazy">
             </div>
             <figcaption>
+              <div class="tile-specs">
+                <span>SIZE L</span><span>•</span><span>COND 9.4/10</span>
+                <span class="tile-serial">#GNL-0803</span>
+              </div>
               <h4>Louis Vuitton Carpet Logo Tee</h4>
-              <p class="price">$379</p>
-              <a href="#" class="button button-primary">View Details</a>
+              <p class="price">₱19,800</p>
+              <button type="button" class="button button-primary quickview-trigger">View Archive Specs</button>
             </figcaption>
           </figure>
           
-          <figure class="gallery-item">
+          <figure class="gallery-item"
+                  data-brand="chrome-hearts"
+                  data-title="Chrome Hearts × A Bathing Ape Collab Tee"
+                  data-price="₱8,500"
+                  data-size="Size L"
+                  data-condition="9.5/10 Mint"
+                  data-serial="GNL-CH-0891"
+                  data-img="pics/newarrival1.jpg">
+            <span class="tile-badge">New · Verified</span>
             <div class="gallery-item-image-wrapper">
-              <img src="pics/newarrival1.jpg" alt="Featured luxury item 4">
+              <img src="pics/newarrival1.jpg" alt="Chrome Hearts X A Bathing Ape Collab Tee" loading="lazy">
             </div>
             <figcaption>
-              <h4>Chrome Hearts X A Bathing Ape Collab Tee</h4>
-              <p class="price">$599</p>
-              <a href="#" class="button button-primary">View Details</a>
+              <div class="tile-specs">
+                <span>SIZE L</span><span>•</span><span>COND 9.5/10</span>
+                <span class="tile-serial">#GNL-0891</span>
+              </div>
+              <h4>Chrome Hearts × A Bathing Ape Collab Tee</h4>
+              <p class="price">₱8,500</p>
+              <button type="button" class="button button-primary quickview-trigger">View Archive Specs</button>
             </figcaption>
           </figure>
           
-          <figure class="gallery-item">
+          <figure class="gallery-item"
+                  data-brand="vlone"
+                  data-title="Vlone Rhinestone Big Logo Tee"
+                  data-price="₱11,200"
+                  data-size="Size XL"
+                  data-condition="9.0/10 Excellent"
+                  data-serial="GNL-VL-0519"
+                  data-img="pics/newarrival2.jpg">
             <div class="gallery-item-image-wrapper">
-              <img src="pics/newarrival2.jpg" alt="Featured luxury item 5">
+              <img src="pics/newarrival2.jpg" alt="Vlone Rhinestone Big Logo Tee" loading="lazy">
             </div>
             <figcaption>
-              <h4>Vlone Rhinnestone Big Logo Tee</h4>
-              <p class="price">$329</p>
-              <a href="#" class="button button-primary">View Details</a>
+              <div class="tile-specs">
+                <span>SIZE XL</span><span>•</span><span>COND 9.0/10</span>
+                <span class="tile-serial">#GNL-0519</span>
+              </div>
+              <h4>Vlone Rhinestone Big Logo Tee</h4>
+              <p class="price">₱11,200</p>
+              <button type="button" class="button button-primary quickview-trigger">View Archive Specs</button>
             </figcaption>
           </figure>
           
-          <figure class="gallery-item">
+          <figure class="gallery-item"
+                  data-brand="louis-vuitton"
+                  data-title="Louis Vuitton Signature Archive Tee"
+                  data-price="₱16,500"
+                  data-size="Size M"
+                  data-condition="9.3/10 Excellent"
+                  data-serial="GNL-LV-0411"
+                  data-img="pics/newarrival3.jpg">
             <div class="gallery-item-image-wrapper">
-              <img src="pics/newarrival3.jpg" alt="Featured luxury item 6">
+              <img src="pics/newarrival3.jpg" alt="Louis Vuitton Tee" loading="lazy">
             </div>
             <figcaption>
-              <h4>Louis Vuitton Tee</h4>
-              <p class="price">$249</p>
-              <a href="#" class="button button-primary">View Details</a>
+              <div class="tile-specs">
+                <span>SIZE M</span><span>•</span><span>COND 9.3/10</span>
+                <span class="tile-serial">#GNL-0411</span>
+              </div>
+              <h4>Louis Vuitton Signature Archive Tee</h4>
+              <p class="price">₱16,500</p>
+              <button type="button" class="button button-primary quickview-trigger">View Archive Specs</button>
             </figcaption>
           </figure>
         </div>
@@ -325,6 +410,47 @@
       </div>
     </section>
   </main>
+
+  <!-- ============================================================
+       SLIDE-OVER ARCHIVE QUICK-VIEW DRAWER
+       ============================================================ -->
+  <div id="quickview-backdrop" class="quickview-backdrop" aria-hidden="true"></div>
+  <aside id="quickview-drawer" class="quickview-drawer" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="qv-title">
+    <div class="quickview-header">
+      <span class="qv-cert-badge">✦ VERIFIED AUTHENTIC</span>
+      <button type="button" id="quickview-close" class="quickview-close" aria-label="Close preview">ESC / ✕</button>
+    </div>
+    <div class="quickview-body">
+      <div class="quickview-media">
+        <img id="qv-img" src="" alt="Garment detail">
+      </div>
+      <div class="quickview-info">
+        <div id="qv-brand" class="qv-brand">BRAND</div>
+        <h3 id="qv-title">Garment Title</h3>
+        <div id="qv-price" class="qv-price">₱0</div>
+        <div class="qv-specs-grid">
+          <div class="qv-spec-box">
+            <span class="qv-spec-label">Size</span>
+            <strong id="qv-size">OS</strong>
+          </div>
+          <div class="qv-spec-box">
+            <span class="qv-spec-label">Condition</span>
+            <strong id="qv-condition">9.5/10</strong>
+          </div>
+          <div class="qv-spec-box">
+            <span class="qv-spec-label">Serial / Ref</span>
+            <strong id="qv-serial">GNL-VERIFIED</strong>
+          </div>
+        </div>
+        <p class="qv-desc">
+          Hand-inspected for physical authenticity and structural integrity. Includes cryptographic tamper-proof archive tag and multi-point provenance record.
+        </p>
+        <div class="qv-actions">
+          <a id="qv-reserve-btn" href="contact.html" class="button button-primary">Reserve / Inquire via Concierge</a>
+        </div>
+      </div>
+    </div>
+  </aside>
 
   <!-- ============================================================
        FOOTER — LUXURY E-COMMERCE

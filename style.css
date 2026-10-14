@@ -7,7 +7,7 @@
 /* ============================================================
    IMPORTS & RESET
    ============================================================ */
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300;0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;0,14..32,800;1,14..32,400&family=Playfair+Display:wght@500;600;700&family=UnifrakturCook:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300;0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;0,14..32,800;1,14..32,400&family=JetBrains+Mono:wght@400;600;700&family=Playfair+Display:wght@500;600;700&family=UnifrakturCook:wght@700&display=swap');
 
 *, *::before, *::after { box-sizing: border-box; }
 html {
@@ -55,6 +55,7 @@ a { transition: color 0.2s ease; }
   --gothic-accent: #2a2a2a;
   --header-bg: rgba(250, 250, 250, 0.80);
   --radius: 0px;               /* Brutalist — no border radius by default */
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
   --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -1004,10 +1005,13 @@ body:not(.dark-mode) .hero::after {
   pointer-events: none;
 }
 
-/* Product hover overlay: detail zoom box (left) + Buy Now button (right) */
+/* Product hover overlay: detail zoom box (left) + Quick View / Buy button (right) positioned cleanly over image */
 .tile-overlay {
   position: absolute;
-  inset: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  aspect-ratio: 4 / 5;
   pointer-events: none;
   opacity: 0;
   transition: opacity 0.28s cubic-bezier(0.4, 0, 0.2, 1);
@@ -1125,35 +1129,69 @@ body.dark-mode .tile-zoom-preview:hover {
 }
 
 .tile-meta {
-  padding: 10px 12px 12px;
-  transition: opacity 0.25s ease;
+  border-top: 1.5px solid var(--border);
+  background: var(--surface);
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  z-index: 6;
+  opacity: 1 !important;
+  transition: background 0.2s ease;
 }
+
 @media (hover: hover) and (pointer: fine) {
   .tile:hover .tile-meta {
-    opacity: 0;
+    opacity: 1 !important;
   }
 }
 .tile.is-active .tile-meta {
-  opacity: 0;
+  opacity: 1 !important;
 }
+
+.tile-meta-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+}
+
 .tile-meta figcaption {
-  font-size: 0.78rem;
-  font-weight: 600;
+  font-size: 0.8rem;
+  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.5px;
   color: var(--ink);
-  margin-bottom: 2px;
+  margin: 0;
 }
+
 .tile-price {
-  font-size: 0.85rem;
+  font-size: 0.88rem;
   font-weight: 700;
   color: var(--accent);
+  font-family: var(--font-mono);
+}
+
+.tile-specs {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.68rem;
+  color: var(--muted);
+  letter-spacing: 0.5px;
+  font-family: var(--font-mono);
+}
+
+.tile-serial {
+  margin-left: auto;
+  color: var(--ink);
+  font-weight: 600;
 }
 
 @media (min-width: 480px) {
   .tile-meta { padding: 12px 16px 14px; }
-  .tile-meta figcaption { font-size: 0.82rem; }
-  .tile-price { font-size: 0.9rem; }
+  .tile-meta figcaption { font-size: 0.84rem; }
+  .tile-price { font-size: 0.92rem; }
 }
 
 /* ============================================================
@@ -2240,22 +2278,82 @@ body.dark-mode .success-message { color: #6fe090; background: rgba(40, 167, 69, 
 .faq-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 20px;
-  margin-top: 40px;
+  gap: 16px;
+  margin-top: 36px;
 }
 @media (min-width: 768px) {
-  .faq-grid { grid-template-columns: repeat(2, 1fr); gap: 28px; }
+  .faq-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    align-items: start;
+  }
 }
 
 .faq-item {
-  padding: 26px;
+  padding: 22px 24px;
   background: var(--bg);
   border: 1.5px solid var(--border);
-  transition: var(--transition);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+  overflow: hidden;
+  cursor: pointer;
+  user-select: none;
 }
-.faq-item:hover { border-color: var(--accent); box-shadow: var(--shadow); }
-.faq-item h3 { font-family: 'Playfair Display', Georgia, serif; font-size: 1.1rem; margin-bottom: 10px; }
-.faq-item p { color: var(--muted); line-height: 1.6; margin: 0; font-size: 0.92rem; }
+
+.faq-item:hover,
+.faq-item.is-open {
+  border-color: var(--accent);
+  box-shadow: var(--shadow-sm);
+}
+
+.faq-item h3 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.05rem;
+  margin: 0;
+  color: var(--ink);
+  font-weight: 600;
+  line-height: 1.35;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  transition: color 0.2s ease;
+}
+
+.faq-item:hover h3,
+.faq-item.is-open h3 {
+  color: var(--accent);
+}
+
+.faq-item h3::after {
+  content: '+';
+  font-family: var(--font-mono);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--accent);
+  transition: transform 0.25s ease;
+}
+
+.faq-item.is-open h3::after {
+  content: '−';
+  transform: rotate(180deg);
+}
+
+.faq-item p {
+  color: var(--muted);
+  line-height: 1.6;
+  margin: 0;
+  font-size: 0.92rem;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.3s ease, opacity 0.25s ease, margin-top 0.25s ease;
+}
+
+.faq-item.is-open p {
+  max-height: 260px;
+  opacity: 1;
+  margin-top: 12px;
+}
 
 /* ============================================================
    MAP
@@ -2396,4 +2494,400 @@ body.dark-mode .footer-bottom-strip { background: #080808; border-color: #1a1a1a
 body.dark-mode .newsletter-form { border-color: rgba(255, 255, 255, 0.25); }
 body.dark-mode .primary-nav { border-color: var(--border); }
 body.dark-mode .scroll-top-btn { border: 1px solid rgba(255, 255, 255, 0.18); }
+
+/* ============================================================
+   2026 UI MODERNIZATION: ARCHIVAL MONOSPACE, MARQUEE & DRAWER
+   ============================================================ */
+
+/* 1. Monospace Archival Spec Styling */
+.tile-price,
+.gallery-item .price,
+.tile-badge,
+.newsletter-badge,
+.stat-number,
+.tile-specs,
+.qv-price,
+.qv-cert-badge,
+.quickview-close {
+  font-family: var(--font-mono);
+}
+
+/* 2. Infinite Brutalist Marquee Strip */
+.archive-marquee {
+  background: var(--ink);
+  color: var(--bg);
+  border-bottom: 1.5px solid var(--border);
+  overflow: hidden;
+  padding: 12px 0;
+  user-select: none;
+}
+
+body.dark-mode .archive-marquee {
+  background: #111111;
+  color: #f5f5f5;
+  border-top: 1px solid var(--border);
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marqueeScroll 28s linear infinite;
+}
+
+.archive-marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+  }
+}
+
+.marquee-group {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  padding-right: 28px;
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.marquee-group .dot {
+  color: var(--accent);
+}
+
+@keyframes marqueeScroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* 3. Shop Filter Toolbar & Search */
+.shop-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 28px;
+  padding-bottom: 20px;
+  border-bottom: 1.5px solid var(--border);
+}
+
+.filter-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.filter-pill {
+  padding: 9px 16px;
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  color: var(--ink);
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.filter-pill:hover {
+  border-color: var(--ink);
+}
+
+.filter-pill.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #ffffff;
+}
+
+.shop-search-wrapper {
+  flex: 1 1 240px;
+  max-width: 320px;
+}
+
+.shop-search-input {
+  width: 100%;
+  height: 40px;
+  padding: 0 14px;
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  color: var(--ink);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.shop-search-input:focus {
+  border-color: var(--accent);
+}
+
+/* 4. Upgraded Product Tile Footer (Keep Meta Visible on Hover) */
+.tile .tile-img-link {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tile .tile-img-link > img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.55s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .tile:hover .tile-img-link > img { transform: scale(1.06); }
+  .tile:hover .tile-meta { opacity: 1 !important; }
+}
+
+.tile.is-active .tile-meta {
+  opacity: 1 !important;
+}
+
+.tile.is-hidden,
+.gallery-item.is-hidden {
+  display: none !important;
+}
+
+/* 5. Slide-Over Quick-View Drawer */
+.quickview-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(4px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 990;
+}
+
+.quickview-backdrop.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.quickview-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: min(100vw, 460px);
+  background: var(--surface);
+  border-left: 1.5px solid var(--border);
+  transform: translateX(100%);
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 995;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.quickview-drawer.is-open {
+  transform: translateX(0);
+}
+
+.quickview-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  border-bottom: 1.5px solid var(--border);
+}
+
+.qv-cert-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--accent);
+  background: rgba(232, 0, 13, 0.08);
+  border: 1px solid rgba(232, 0, 13, 0.25);
+  padding: 4px 10px;
+}
+
+.quickview-close {
+  background: transparent;
+  border: 1.5px solid var(--border);
+  color: var(--ink);
+  padding: 6px 12px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.quickview-close:hover {
+  background: var(--ink);
+  color: var(--bg);
+}
+
+.quickview-body {
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.quickview-media {
+  aspect-ratio: 4 / 4;
+  background: var(--surface-alt);
+  border: 1.5px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.quickview-media img {
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.qv-brand {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: var(--muted);
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.quickview-info h3 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.5rem;
+  margin-bottom: 8px;
+}
+
+.qv-price {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 16px;
+}
+
+.qv-specs-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.qv-spec-box {
+  padding: 10px;
+  background: var(--surface-alt);
+  border: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.qv-spec-label {
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  color: var(--muted);
+  letter-spacing: 0.6px;
+}
+
+.qv-spec-box strong {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--ink);
+}
+
+.qv-desc {
+  font-size: 0.88rem;
+  color: var(--muted);
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.qv-actions .button {
+  width: 100%;
+  text-align: center;
+}
+
+/* 6. Featured Gallery Card Alignment (services.html) */
+.gallery-item {
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+}
+
+.gallery-item figcaption {
+  border-top: 1.5px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 6px;
+}
+
+.gallery-item h4 {
+  margin: 2px 0;
+  line-height: 1.35;
+}
+
+.gallery-item .price {
+  font-size: 1.05rem;
+  margin-top: auto;
+  margin-bottom: 8px;
+}
+
+.gallery-item.is-hidden {
+  display: none !important;
+}
+
+/* 7. Interactive FAQ Accordions (contact.html) */
+.faq-item {
+  cursor: pointer;
+  user-select: none;
+}
+
+.faq-item h3 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 0;
+}
+
+.faq-item h3::after {
+  content: '+';
+  font-family: var(--font-mono);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--accent);
+  transition: transform 0.25s ease;
+}
+
+.faq-item.is-open h3::after {
+  content: '−';
+  transform: rotate(180deg);
+}
+
+.faq-item p {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.3s ease, opacity 0.25s ease, margin-top 0.25s ease;
+}
+
+.faq-item.is-open p {
+  max-height: 260px;
+  opacity: 1;
+  margin-top: 12px;
+}
+
+
 

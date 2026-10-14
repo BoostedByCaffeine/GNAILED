@@ -202,8 +202,8 @@ const productTiles = document.querySelectorAll('.tile');
 if (productTiles.length > 0) {
   productTiles.forEach(tile => {
     tile.addEventListener('click', (e) => {
-      // Allow direct clicks on Buy Now button and detail zoom preview link to navigate
-      if (e.target.closest('.buy-now') || e.target.closest('.tile-zoom-preview')) {
+      // Allow direct clicks on Buy Now / Quick View button and detail zoom preview link
+      if (e.target.closest('.buy-now') || e.target.closest('.quickview-trigger') || e.target.closest('.tile-zoom-preview') || e.target.closest('button')) {
         return;
       }
 
@@ -376,8 +376,135 @@ document.querySelectorAll('.footer-accordion-btn').forEach(btn => {
 
 
 // ============================================================
+// 11. UNIFIED ARCHIVE FILTER, BRAND JUMP & LIVE SEARCH
+// ============================================================
+const filterPills = document.querySelectorAll('.filter-pill');
+const archiveSearch = document.getElementById('archive-search');
+const archiveCards = document.querySelectorAll('.masonry .tile, .featured-gallery .gallery-item');
+
+function filterArchive() {
+  const activePill = document.querySelector('.filter-pill.active');
+  const selectedBrand = activePill ? activePill.dataset.filter : 'all';
+  const query = archiveSearch ? archiveSearch.value.trim().toLowerCase() : '';
+
+  archiveCards.forEach(card => {
+    const brand = (card.dataset.brand || '').toLowerCase();
+    const title = (card.dataset.title || card.textContent || '').toLowerCase();
+    const serial = (card.dataset.serial || '').toLowerCase();
+    const matchesBrand = selectedBrand === 'all' || brand === selectedBrand;
+    const matchesQuery = !query || title.includes(query) || brand.includes(query) || serial.includes(query);
+
+    card.classList.toggle('is-hidden', !(matchesBrand && matchesQuery));
+  });
+}
+
+filterPills.forEach(pill => {
+  pill.addEventListener('click', () => {
+    filterPills.forEach(p => p.classList.remove('active'));
+    pill.classList.add('active');
+    filterArchive();
+  });
+});
+
+if (archiveSearch) {
+  archiveSearch.addEventListener('input', filterArchive);
+}
+
+// Connect "Shop by Brand" cards to filter bar
+document.querySelectorAll('[data-brand-jump]').forEach(link => {
+  link.addEventListener('click', () => {
+    const targetBrand = link.dataset.brandJump;
+    const targetPill = document.querySelector(`.filter-pill[data-filter="${targetBrand}"]`);
+    if (targetPill) {
+      filterPills.forEach(p => p.classList.remove('active'));
+      targetPill.classList.add('active');
+      filterArchive();
+    }
+  });
+});
+
+/* ============================================================
+   12. UNIFIED SLIDE-OVER QUICK-VIEW DRAWER & URL PRE-FILL
+   ============================================================ */
+const qvDrawer = document.getElementById('quickview-drawer');
+const qvBackdrop = document.getElementById('quickview-backdrop');
+const qvClose = document.getElementById('quickview-close');
+
+function openQuickView(card) {
+  if (!qvDrawer || !card) return;
+  const title = card.dataset.title || 'Authenticated Archive Piece';
+  const price = card.dataset.price || '₱—';
+  const size = card.dataset.size || 'OS';
+  const condition = card.dataset.condition || '9.5/10';
+  const serial = card.dataset.serial || 'GNL-VERIFIED';
+  const brand = (card.dataset.brand || 'LUXURY ARCHIVE').replace(/-/g, ' ');
+  const img = card.dataset.img || card.querySelector('img')?.src;
+
+  document.getElementById('qv-title').textContent = title;
+  document.getElementById('qv-price').textContent = price;
+  document.getElementById('qv-size').textContent = size;
+  document.getElementById('qv-condition').textContent = condition;
+  document.getElementById('qv-serial').textContent = serial;
+  document.getElementById('qv-brand').textContent = brand.toUpperCase();
+  if (img) document.getElementById('qv-img').src = img;
+
+  const reserveBtn = document.getElementById('qv-reserve-btn');
+  if (reserveBtn) {
+    reserveBtn.href = `contact.html?subject=buying&item=${encodeURIComponent(title + ' (' + serial + ') - ' + price)}`;
+  }
+
+  qvDrawer.classList.add('is-open');
+  qvBackdrop.classList.add('is-open');
+  qvDrawer.setAttribute('aria-hidden', 'false');
+}
+
+function closeQuickView() {
+  if (!qvDrawer) return;
+  qvDrawer.classList.remove('is-open');
+  qvBackdrop.classList.remove('is-open');
+  qvDrawer.setAttribute('aria-hidden', 'true');
+}
+
+document.querySelectorAll('.quickview-trigger').forEach(btn => {
+  btn.addEventListener('click', (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    openQuickView(btn.closest('.tile, .gallery-item'));
+  });
+});
+
+if (qvClose) qvClose.addEventListener('click', closeQuickView);
+if (qvBackdrop) qvBackdrop.addEventListener('click', closeQuickView);
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') closeQuickView();
+});
+
+// Pre-fill Contact Form when arriving from Quick-View Reserve CTA
+const urlParams = new URLSearchParams(window.location.search);
+const prefillSubject = urlParams.get('subject');
+const prefillItem = urlParams.get('item');
+if (prefillSubject && document.getElementById('subject')) {
+  document.getElementById('subject').value = prefillSubject;
+}
+if (prefillItem && document.getElementById('message')) {
+  document.getElementById('message').value = `Hi Gnailed Concierge, I would like to reserve/inquire about: ${prefillItem}. Please let me know the next steps for checkout.`;
+}
+
+/* ============================================================
+   13. INTERACTIVE FAQ ACCORDIONS (contact.html)
+   ============================================================ */
+document.querySelectorAll('.faq-item').forEach((item, index) => {
+  if (index === 0) item.classList.add('is-open'); // Open first FAQ by default
+  item.addEventListener('click', () => {
+    item.classList.toggle('is-open');
+  });
+});
+
+
+// ============================================================
 // Dev console badge
 // ============================================================
-console.log('%cGnailed â€” Luxury Pre-Loved Fashion', 'font-size:15px;font-weight:700;color:#e8000d;');
-console.log('%cVanilla JS â€” 2026 Edition', 'font-size:11px;color:#888;');
+console.log('%cGnailed — Luxury Pre-Loved Fashion', 'font-size:15px;font-weight:700;color:#e8000d;');
+console.log('%cVanilla JS — 2026 Edition', 'font-size:11px;color:#888;');
+
 

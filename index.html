@@ -7,7 +7,7 @@
   <title>Gnailed — Luxury Pre‑Loved Garments</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300;0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;0,14..32,800;1,14..32,400&family=Playfair+Display:wght@500;600;700&family=UnifrakturCook:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300;0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;0,14..32,800;1,14..32,400&family=JetBrains+Mono:wght@400;600;700&family=Playfair+Display:wght@500;600;700&family=UnifrakturCook:wght@700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css?v=2.3">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
@@ -86,6 +86,32 @@
         <span>Scroll</span>
       </div>
     </section>
+
+    <!-- ============================================================
+         ARCHIVE MARQUEE TICKER
+         ============================================================ -->
+    <div class="archive-marquee" aria-label="Authenticated brands and guarantees">
+      <div class="marquee-track">
+        <div class="marquee-group">
+          <span>100% MULTI-POINT AUTHENTICATED</span><span class="dot">✦</span>
+          <span>CHROME HEARTS</span><span class="dot">✦</span>
+          <span>LOUIS VUITTON</span><span class="dot">✦</span>
+          <span>AMI PARIS</span><span class="dot">✦</span>
+          <span>POLO RALPH LAUREN</span><span class="dot">✦</span>
+          <span>CIRCULAR LUXURY ARCHIVE</span><span class="dot">✦</span>
+          <span>INSURED PH NATIONWIDE SHIPPING</span><span class="dot">✦</span>
+        </div>
+        <div class="marquee-group" aria-hidden="true">
+          <span>100% MULTI-POINT AUTHENTICATED</span><span class="dot">✦</span>
+          <span>CHROME HEARTS</span><span class="dot">✦</span>
+          <span>LOUIS VUITTON</span><span class="dot">✦</span>
+          <span>AMI PARIS</span><span class="dot">✦</span>
+          <span>POLO RALPH LAUREN</span><span class="dot">✦</span>
+          <span>CIRCULAR LUXURY ARCHIVE</span><span class="dot">✦</span>
+          <span>INSURED PH NATIONWIDE SHIPPING</span><span class="dot">✦</span>
+        </div>
+      </div>
+    </div>
 
     <!-- ============================================================
          IMAGE CAROUSEL
@@ -168,7 +194,7 @@
             <div class="card-body">
               <h3>Chrome Hearts Tees &amp; Hoodies</h3>
               <p>Monochrome graphics, bold crosses, unmistakable attitude.</p>
-              <a class="text-link" href="#shop">Browse Chrome Hearts</a>
+              <a class="text-link" href="#shop" data-brand-jump="chrome-hearts">Browse Chrome Hearts</a>
             </div>
           </article>
           <article class="card reveal reveal-delay-2">
@@ -178,7 +204,7 @@
             <div class="card-body">
               <h3>AMI Paris Tees &amp; Sweaters</h3>
               <p>Minimalist staples with the iconic Ami de Coeur.</p>
-              <a class="text-link" href="#shop">Browse AMI</a>
+              <a class="text-link" href="#shop" data-brand-jump="ami-paris">Browse AMI</a>
             </div>
           </article>
           <article class="card reveal reveal-delay-3">
@@ -188,7 +214,7 @@
             <div class="card-body">
               <h3>Polo Ralph Lauren Tees &amp; Sweaters</h3>
               <p>Timeless Americana with the signature pony.</p>
-              <a class="text-link" href="#shop">Browse Polo RL</a>
+              <a class="text-link" href="#shop" data-brand-jump="polo-rl">Browse Polo RL</a>
             </div>
           </article>
           <article class="card reveal reveal-delay-4">
@@ -198,7 +224,7 @@
             <div class="card-body">
               <h3>Louis Vuitton Tees</h3>
               <p>Elevated monograms and refined silhouettes.</p>
-              <a class="text-link" href="#shop">Browse LV</a>
+              <a class="text-link" href="#shop" data-brand-jump="louis-vuitton">Browse LV</a>
             </div>
           </article>
         </div>
@@ -214,104 +240,209 @@
           <h2>New Arrivals</h2>
           <p>Fresh drops from trusted closets, hand‑picked daily.</p>
         </header>
+
+        <!-- Shop Filter Toolbar & Live Search -->
+        <div class="shop-toolbar reveal">
+          <div class="filter-pills" role="toolbar" aria-label="Brand filter">
+            <button type="button" class="filter-pill active" data-filter="all">All</button>
+            <button type="button" class="filter-pill" data-filter="chrome-hearts">Chrome Hearts</button>
+            <button type="button" class="filter-pill" data-filter="ami-paris">AMI Paris</button>
+            <button type="button" class="filter-pill" data-filter="polo-rl">Polo RL</button>
+            <button type="button" class="filter-pill" data-filter="louis-vuitton">Louis Vuitton</button>
+          </div>
+          <div class="shop-search-wrapper">
+            <input type="search" id="archive-search" class="shop-search-input" placeholder="Search archive (e.g. Hoodie, LV, Tee)..." aria-label="Search archive pieces">
+          </div>
+        </div>
+
         <div class="masonry">
 
-          <figure class="tile reveal reveal-delay-1">
+          <figure class="tile reveal reveal-delay-1"
+            data-brand="chrome-hearts"
+            data-title="CH × BAPE Collab Tee"
+            data-price="₱8,500"
+            data-size="L"
+            data-condition="9.5/10"
+            data-serial="GNL-CH01"
+            data-img="pics/newarrival1.jpg">
             <span class="tile-badge">New</span>
-            <a href="#zoom1" aria-label="Zoom image 1" class="tile-image-wrapper">
+            <a href="#zoom1" aria-label="Zoom image 1" class="tile-image-wrapper tile-img-link">
               <img src="pics/newarrival1.jpg" alt="Chrome Hearts X A Bathing Ape Collab Tee" loading="lazy">
             </a>
             <div class="tile-overlay">
               <a href="#zoom1" class="tile-zoom-preview" aria-label="View design detail" style="--zoom-x: 48.8%; --zoom-y: 45.1%; --zoom-scale: 3.2;">
                 <img src="pics/newarrival1.jpg" alt="CH × BAPE detail zoom" class="tile-zoom-img" loading="lazy">
               </a>
-              <a href="#shop" class="button buy-now">Buy Now</a>
+              <button type="button" class="button buy-now quickview-trigger" aria-label="Quick view CH × BAPE Collab Tee">Quick View</button>
             </div>
             <div class="tile-meta">
-              <figcaption>CH × BAPE Collab Tee</figcaption>
-              <div class="tile-price">₱8,500</div>
+              <div class="tile-meta-row">
+                <figcaption>CH × BAPE Collab Tee</figcaption>
+                <div class="tile-price">₱8,500</div>
+              </div>
+              <div class="tile-specs">
+                <span>SIZE L</span>
+                <span>·</span>
+                <span>9.5/10</span>
+                <span class="tile-serial">GNL-CH01</span>
+              </div>
             </div>
           </figure>
 
-          <figure class="tile reveal reveal-delay-2">
+          <figure class="tile reveal reveal-delay-2"
+            data-brand="chrome-hearts"
+            data-title="Chrome Hearts Hoodie"
+            data-price="₱14,200"
+            data-size="XL"
+            data-condition="9/10"
+            data-serial="GNL-CH02"
+            data-img="pics/newarrival2.jpg">
             <span class="tile-badge">New</span>
-            <a href="#zoom2" aria-label="Zoom image 2" class="tile-image-wrapper">
-              <img src="pics/newarrival2.jpg" alt="New arrival 2" loading="lazy">
+            <a href="#zoom2" aria-label="Zoom image 2" class="tile-image-wrapper tile-img-link">
+              <img src="pics/newarrival2.jpg" alt="Chrome Hearts Hoodie" loading="lazy">
             </a>
             <div class="tile-overlay">
               <a href="#zoom2" class="tile-zoom-preview" aria-label="View design detail" style="--zoom-x: 49.9%; --zoom-y: 48.6%; --zoom-scale: 2.5;">
-                <img src="pics/newarrival2.jpg" alt="Vlone detail zoom" class="tile-zoom-img" loading="lazy">
+                <img src="pics/newarrival2.jpg" alt="Chrome Hearts Hoodie detail zoom" class="tile-zoom-img" loading="lazy">
               </a>
-              <a href="#shop" class="button buy-now">Buy Now</a>
+              <button type="button" class="button buy-now quickview-trigger" aria-label="Quick view Chrome Hearts Hoodie">Quick View</button>
             </div>
             <div class="tile-meta">
-              <figcaption>Chrome Hearts Hoodie</figcaption>
-              <div class="tile-price">₱14,200</div>
+              <div class="tile-meta-row">
+                <figcaption>Chrome Hearts Hoodie</figcaption>
+                <div class="tile-price">₱14,200</div>
+              </div>
+              <div class="tile-specs">
+                <span>SIZE XL</span>
+                <span>·</span>
+                <span>9/10</span>
+                <span class="tile-serial">GNL-CH02</span>
+              </div>
             </div>
           </figure>
 
-          <figure class="tile reveal reveal-delay-3">
-            <a href="#zoom3" aria-label="Zoom image 3" class="tile-image-wrapper">
-              <img src="pics/newarrival3.jpg" alt="New arrival 3" loading="lazy">
+          <figure class="tile reveal reveal-delay-3"
+            data-brand="ami-paris"
+            data-title="AMI de Coeur Knit"
+            data-price="₱6,800"
+            data-size="M"
+            data-condition="9.5/10"
+            data-serial="GNL-AMI01"
+            data-img="pics/newarrival3.jpg">
+            <a href="#zoom3" aria-label="Zoom image 3" class="tile-image-wrapper tile-img-link">
+              <img src="pics/newarrival3.jpg" alt="AMI de Coeur Knit" loading="lazy">
             </a>
             <div class="tile-overlay">
               <a href="#zoom3" class="tile-zoom-preview" aria-label="View design detail" style="--zoom-x: 50.0%; --zoom-y: 46.0%; --zoom-scale: 2.8;">
-                <img src="pics/newarrival3.jpg" alt="LV monogram detail zoom" class="tile-zoom-img" loading="lazy">
+                <img src="pics/newarrival3.jpg" alt="AMI de Coeur detail zoom" class="tile-zoom-img" loading="lazy">
               </a>
-              <a href="#shop" class="button buy-now">Buy Now</a>
+              <button type="button" class="button buy-now quickview-trigger" aria-label="Quick view AMI de Coeur Knit">Quick View</button>
             </div>
             <div class="tile-meta">
-              <figcaption>AMI de Coeur Knit</figcaption>
-              <div class="tile-price">₱6,800</div>
+              <div class="tile-meta-row">
+                <figcaption>AMI de Coeur Knit</figcaption>
+                <div class="tile-price">₱6,800</div>
+              </div>
+              <div class="tile-specs">
+                <span>SIZE M</span>
+                <span>·</span>
+                <span>9.5/10</span>
+                <span class="tile-serial">GNL-AMI01</span>
+              </div>
             </div>
           </figure>
 
-          <figure class="tile reveal reveal-delay-1">
-            <a href="#zoom4" aria-label="Zoom image 4" class="tile-image-wrapper">
-              <img src="pics/newarrival4.jpg" alt="New arrival 4" loading="lazy">
+          <figure class="tile reveal reveal-delay-1"
+            data-brand="polo-rl"
+            data-title="Polo RL Vintage Tee"
+            data-price="₱3,200"
+            data-size="L"
+            data-condition="8.5/10"
+            data-serial="GNL-PRL01"
+            data-img="pics/newarrival4.jpg">
+            <a href="#zoom4" aria-label="Zoom image 4" class="tile-image-wrapper tile-img-link">
+              <img src="pics/newarrival4.jpg" alt="Polo RL Vintage Tee" loading="lazy">
             </a>
             <div class="tile-overlay">
               <a href="#zoom4" class="tile-zoom-preview" aria-label="View design detail" style="--zoom-x: 61.6%; --zoom-y: 35.1%; --zoom-scale: 4.5;">
-                <img src="pics/newarrival4.jpg" alt="AMI Heart detail zoom" class="tile-zoom-img" loading="lazy">
+                <img src="pics/newarrival4.jpg" alt="Polo RL detail zoom" class="tile-zoom-img" loading="lazy">
               </a>
-              <a href="#shop" class="button buy-now">Buy Now</a>
+              <button type="button" class="button buy-now quickview-trigger" aria-label="Quick view Polo RL Vintage Tee">Quick View</button>
             </div>
             <div class="tile-meta">
-              <figcaption>Polo RL Vintage Tee</figcaption>
-              <div class="tile-price">₱3,200</div>
+              <div class="tile-meta-row">
+                <figcaption>Polo RL Vintage Tee</figcaption>
+                <div class="tile-price">₱3,200</div>
+              </div>
+              <div class="tile-specs">
+                <span>SIZE L</span>
+                <span>·</span>
+                <span>8.5/10</span>
+                <span class="tile-serial">GNL-PRL01</span>
+              </div>
             </div>
           </figure>
 
-          <figure class="tile reveal reveal-delay-2">
+          <figure class="tile reveal reveal-delay-2"
+            data-brand="louis-vuitton"
+            data-title="LV Monogram Tee"
+            data-price="₱22,000"
+            data-size="M"
+            data-condition="9.8/10"
+            data-serial="GNL-LV01"
+            data-img="pics/newarrival5.jpg">
             <span class="tile-badge">New</span>
-            <a href="#zoom5" aria-label="Zoom image 5" class="tile-image-wrapper">
-              <img src="pics/newarrival5.jpg" alt="New arrival 5" loading="lazy">
+            <a href="#zoom5" aria-label="Zoom image 5" class="tile-image-wrapper tile-img-link">
+              <img src="pics/newarrival5.jpg" alt="LV Monogram Tee" loading="lazy">
             </a>
             <div class="tile-overlay">
               <a href="#zoom5" class="tile-zoom-preview" aria-label="View design detail" style="--zoom-x: 61.5%; --zoom-y: 37.7%; --zoom-scale: 6.2;">
-                <img src="pics/newarrival5.jpg" alt="Polo RL pony detail zoom" class="tile-zoom-img" loading="lazy">
+                <img src="pics/newarrival5.jpg" alt="LV monogram detail zoom" class="tile-zoom-img" loading="lazy">
               </a>
-              <a href="#shop" class="button buy-now">Buy Now</a>
+              <button type="button" class="button buy-now quickview-trigger" aria-label="Quick view LV Monogram Tee">Quick View</button>
             </div>
             <div class="tile-meta">
-              <figcaption>LV Monogram Tee</figcaption>
-              <div class="tile-price">₱22,000</div>
+              <div class="tile-meta-row">
+                <figcaption>LV Monogram Tee</figcaption>
+                <div class="tile-price">₱22,000</div>
+              </div>
+              <div class="tile-specs">
+                <span>SIZE M</span>
+                <span>·</span>
+                <span>9.8/10</span>
+                <span class="tile-serial">GNL-LV01</span>
+              </div>
             </div>
           </figure>
 
-          <figure class="tile reveal reveal-delay-3">
-            <a href="#zoom6" aria-label="Zoom image 6" class="tile-image-wrapper">
-              <img src="pics/newarrival6.jpg" alt="New arrival 6" loading="lazy">
+          <figure class="tile reveal reveal-delay-3"
+            data-brand="chrome-hearts"
+            data-title="Chrome Hearts L/S Tee"
+            data-price="₱11,500"
+            data-size="L"
+            data-condition="9/10"
+            data-serial="GNL-CH03"
+            data-img="pics/newarrival6.jpg">
+            <a href="#zoom6" aria-label="Zoom image 6" class="tile-image-wrapper tile-img-link">
+              <img src="pics/newarrival6.jpg" alt="Chrome Hearts L/S Tee" loading="lazy">
             </a>
             <div class="tile-overlay">
               <a href="#zoom6" class="tile-zoom-preview" aria-label="View design detail" style="--zoom-x: 61.6%; --zoom-y: 39.4%; --zoom-scale: 6.2;">
-                <img src="pics/newarrival6.jpg" alt="Polo Red Pony detail zoom" class="tile-zoom-img" loading="lazy">
+                <img src="pics/newarrival6.jpg" alt="Chrome Hearts detail zoom" class="tile-zoom-img" loading="lazy">
               </a>
-              <a href="#shop" class="button buy-now">Buy Now</a>
+              <button type="button" class="button buy-now quickview-trigger" aria-label="Quick view Chrome Hearts L/S Tee">Quick View</button>
             </div>
             <div class="tile-meta">
-              <figcaption>Chrome Hearts L/S Tee</figcaption>
-              <div class="tile-price">₱11,500</div>
+              <div class="tile-meta-row">
+                <figcaption>Chrome Hearts L/S Tee</figcaption>
+                <div class="tile-price">₱11,500</div>
+              </div>
+              <div class="tile-specs">
+                <span>SIZE L</span>
+                <span>·</span>
+                <span>9/10</span>
+                <span class="tile-serial">GNL-CH03</span>
+              </div>
             </div>
           </figure>
 
@@ -556,6 +687,47 @@
       </div>
     </div>
   </footer>
+
+  <!-- ============================================================
+       SLIDE-OVER ARCHIVE QUICK-VIEW DRAWER
+       ============================================================ -->
+  <div id="quickview-backdrop" class="quickview-backdrop" aria-hidden="true"></div>
+  <aside id="quickview-drawer" class="quickview-drawer" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="qv-title">
+    <div class="quickview-header">
+      <span class="qv-cert-badge">✦ VERIFIED AUTHENTIC</span>
+      <button type="button" id="quickview-close" class="quickview-close" aria-label="Close preview">ESC / ✕</button>
+    </div>
+    <div class="quickview-body">
+      <div class="quickview-media">
+        <img id="qv-img" src="" alt="Garment detail">
+      </div>
+      <div class="quickview-info">
+        <div id="qv-brand" class="qv-brand">BRAND</div>
+        <h3 id="qv-title">Garment Title</h3>
+        <div id="qv-price" class="qv-price">₱0</div>
+        <div class="qv-specs-grid">
+          <div class="qv-spec-box">
+            <span class="qv-spec-label">Size</span>
+            <strong id="qv-size">OS</strong>
+          </div>
+          <div class="qv-spec-box">
+            <span class="qv-spec-label">Condition</span>
+            <strong id="qv-condition">9.5/10</strong>
+          </div>
+          <div class="qv-spec-box">
+            <span class="qv-spec-label">Serial / Ref</span>
+            <strong id="qv-serial">GNL-VERIFIED</strong>
+          </div>
+        </div>
+        <p class="qv-desc">
+          Hand-inspected for physical authenticity and structural integrity. Includes cryptographic tamper-proof archive tag and multi-point provenance record.
+        </p>
+        <div class="qv-actions">
+          <a id="qv-reserve-btn" href="contact.html" class="button button-primary">Reserve / Inquire via Concierge</a>
+        </div>
+      </div>
+    </div>
+  </aside>
 
   <!-- Scroll to top button (SVG arrow) -->
   <button id="scroll-top" class="scroll-top-btn" aria-label="Scroll to top">
